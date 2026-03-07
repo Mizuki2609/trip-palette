@@ -1,0 +1,40 @@
+<h1>trip_palette</h1>
+<h3>投稿詳細</h3>
+<div class="tweet">
+    <p><%= @tweet.string "name"%></p>
+    <p><%= @tweet.string "adress"%></p>
+    <p><%= @tweet.string "time"%></p>
+    <p><%= @tweet.integer "cost"%></p>
+    <p><%= @tweet.text "point"%></p>
+    <p><%= @tweet.string "image"%></p>
+    <p><%= @tweet.created_at %></p>
+</div>
+
+<%= link_to "投稿一覧に戻る", tweets_path %>
+<h1>GeekTwitter</h1>
+<h3>投稿詳細</h3>
+<div class="tweet">
+  <p><%= @tweet.body %></p>
+  <p><%= @tweet.created_at %></p>
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(@tweet) %>
+        <%= link_to tweet_like_path(@tweet), method: :delete do %>
+          <p>いいねを取り消す</p><%= @tweet.likes.count %>
+        <% end %>
+      <% else %>
+        <%= link_to tweet_likes_path(@tweet), method: :post do %>
+          <p>いいね</p><%= @tweet.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>いいねの数 = </p><%= @tweet.likes.count %>
+    <% end %>
+  <%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+</div>
+
+<h2>いいねしたユーザー</h2>
+<% @tweet.liked_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+
+<%= link_to "投稿一覧に戻る", tweets_path %>
