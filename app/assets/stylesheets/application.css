@@ -213,3 +213,27 @@ body {
 .top-buttons a{
   margin-left: 10px;
 }
+.start-area{
+  text-align:center;
+  margin-top:200px;
+}
+
+.start-button{
+  display:inline-block;
+  padding:20px 60px;
+  font-size:24px;
+  color:white;
+  text-decoration:none;
+
+  background:linear-gradient(#6fd3ff,#49bfff);
+
+  border-radius:50px;
+
+  box-shadow:0 8px 15px rgba(0,0,0,0.15);
+
+  transition:0.3s;
+}
+.start-button:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 25px rgba(0,0,0,0.2);
+}
