@@ -1,6 +1,7 @@
-
-<h3>新規投稿ページ</h3>
+  <h2>新規投稿ページ</h2>
 <%= form_for @tweet, html: { multipart: true } do |f| %>
+<div class="form-container">
+  <div class="form-card">
   <div class="field">
     <%= f.label :recommended_spot %>
     <%= f.text_field :name, :size => 30 %>
@@ -32,6 +33,8 @@
     <%= f.file_field :image %>
   </div>
   <%= f.submit "投稿する" %>
+    </div>
+</div>
 <% end %>
 
 <%= link_to "一覧に戻る", tweets_path %>
