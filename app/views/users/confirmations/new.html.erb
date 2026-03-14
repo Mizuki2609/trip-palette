@@ -4,7 +4,7 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <p><%= f.label :email %></p>
+    <p><%= f.label :メール %></p>
     <p><%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %></p>
   </div>
 
