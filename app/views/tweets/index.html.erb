@@ -19,11 +19,37 @@
   <div class="sky">
 
   <div class="start-area">
-   <img src="/images/hikouki3.png" class="plane">
+    <%= image_tag "hikouki3.png", class: "plane plane1" %>
+    <%= image_tag "hikouki3.png", class: "plane plane2" %>
+    <%= image_tag "hikouki3.png", class: "plane plane3" %>
+    <%= image_tag "hikouki3.png", class: "plane plane4" %>
+    <%= image_tag "hikouki3.png", class: "plane plane5" %>
+    <%= image_tag "hikouki3.png", class: "plane plane6" %>
+    <%= image_tag "hikouki3.png", class: "plane plane7" %>
    <%= link_to "診断を始める", new_perfume_path, class: "start-button" %>
   </div>
 
   <h3>一覧ページ</h3>
+
+  <div class="cloud cloud-left">
+  <%= image_tag "kumo.png" %>
+</div>
+
+<div class="cloud cloud-right">
+  <%= image_tag "kumo.png" %>
+</div>
+
+<div class="cloud cloud-bottom">
+  <%= image_tag "kumo.png" %>
+</div>
+
+<div class="cloud cloud-left2">
+  <%= image_tag "kumo.png" %>
+</div>
+
+<div class="cloud cloud-right2">
+  <%= image_tag "kumo.png" %>
+</div>
   
   <% @tweets.each do |t| %>
     <div class="tweet">

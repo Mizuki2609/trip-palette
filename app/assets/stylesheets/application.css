@@ -27,10 +27,19 @@
   text-align: right;
 }
 body{
-  background-color: rgb(229, 241, 247);
+  body{
+  background: linear-gradient(
+    to bottom,
+    #bfe6ff,
+    #d6f2ff,
+    #ecfaff,
+    #ffffff
+  );
+}
 }
 .tweets-container{
   text-align: center;
+  position: relative;
 }
 
 .tweet{
@@ -238,41 +247,60 @@ body {
   transform:translateY(-5px);
   box-shadow:0 15px 25px rgba(0,0,0,0.2);
 }
-.sky{
-  height:100vh;
-  background:linear-gradient(#d5ecf7,#e0f6ff);
-  position:relative;
-  overflow:hidden;
-}
-.sky::before{
-  content:"";
-  position:absolute;
-  width:200%;
-  height:200px;
-  background:url("/images/kumo.png");
-  top:50px;
-  left:0;
-  opacity:0.6;
-}
+
 .plane{
   position:absolute;
-  width:120px;
-  top:120px;
-  left:-150px;
-  animation: fly 8s linear infinite;
+  width:90px;
+  top:-85px;
+  right: -120px;
+  animation: fly 10s linear infinite;
+  pointer-events: none;
+}
+
+.plane1{
+  animation-delay:0s;
+}
+
+.plane2{
+  animation-delay:2s;
+}
+
+.plane3{
+  animation-delay:4s;
+}
+
+.plane4{
+  animation-delay:6s;
+}
+
+.plane5{
+  animation-delay:8s;
+}
+
+.plane6{
+  animation-delay:10s;
+}
+
+.plane7{
+  animation-delay:12s;
+}
+
+.sky{
+  position: relative;
 }
 
 @keyframes fly{
+
   0%{
-    left:-150px;
-    transform:rotate(5deg);
+    right:-120px;
   }
 
   100%{
-    left:110%;
-    transform:rotate(5deg);
+    right:110%;
   }
+
 }
+
 .login-wrapper{
   height:100vh;
   display:flex;
@@ -313,4 +341,85 @@ body {
   display: block;
   width: 100%;
   margin-bottom: 15px;
+}
+.cloud{
+  position:absolute;
+}
+
+.cloud img{
+  width:180px;
+}
+
+.cloud-left{
+  left:50px;
+  top:350px;
+}
+
+.cloud-right{
+  right:50px;
+  top:450px;
+}
+
+.cloud-bottom{
+  right:200px;
+  bottom:50px;
+}
+
+.cloud-left2{
+  right:120px;
+  bottom:500px;
+}
+
+.cloud-right2{
+  right:150px;
+  bottom:550px;
+}
+.cloud{
+  position:absolute;
+  z-index:0;
+}
+
+.tweet{
+  position:relative;
+  z-index:1;
+}
+.cloud2{
+  left:60px;
+  top:-20px;
+  width:140px;
+}
+.cloud{
+  position:absolute;
+  z-index:0;
+  animation: cloudFloat 6s ease-in-out infinite;
+}
+@keyframes cloudFloat {
+  0%{
+    transform: translateY(0px);
+  }
+
+  50%{
+    transform: translateY(-15px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+}
+.cloud-left{
+  left:40px;
+  top:350px;
+  animation-delay:0s;
+}
+
+.cloud-right{
+  right:40px;
+  top:420px;
+  animation-delay:2s;
+}
+
+.cloud-bottom{
+  right:200px;
+  bottom:40px;
+  animation-delay:4s;
 }
