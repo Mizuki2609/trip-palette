@@ -240,7 +240,7 @@ body {
 }
 .sky{
   height:100vh;
-  background:linear-gradient(#87cefa,#e0f6ff);
+  background:linear-gradient(#d5ecf7,#e0f6ff);
   position:relative;
   overflow:hidden;
 }
