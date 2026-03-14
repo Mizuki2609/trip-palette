@@ -1,44 +1,100 @@
 <%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
-    <div class="perfume-container">
-        <div class="col-12">
-            <p>Q1. どちらかと言うと…</p>
-        </div>
-        <div class="col-6">
-            <%= f.radio_button :question1, "1", id: "custom_id1" %>
-            <label for="custom_id1">じっくり考える方だ</label>
-            <%= f.radio_button :question1, "2", id: "custom_id2" %>
-            <label for="custom_id2">考えるより行動する方だ</label>
-        </div>
-        <div class="col-12">
-            <p>Q2. 自分の価値観として近い方は…</p>
-        </div> 
-        <div class="col-6">
-            <%= f.radio_button :question2, "1", id: "custom_id3" %>
-            <label for="custom_id3">周りの人と違う存在でありたい</label>
-            <%= f.radio_button :question2, "2", id: "custom_id4" %>
-            <label for="custom_id4">周りと同じでいたい</label>
-        </div>   
-        <div class="col-12">
-            <p>Q3. 人と接するときは…</p>
-        </div>
-        <div class="col-6">
-            <%= f.radio_button :question3, "1", id: "custom_id5" %>
-            <label for="custom_id5">相手の話をよく聞く方だ</label>
-            <%= f.radio_button :question3, "2", id: "custom_id6" %>
-            <label for="custom_id6">自分の話をよくする方だ</label>
-        </div>
-    
-        <div class="col-12">
-            <p>Q4. 大切にしたいのは…</p>
-        </div>
-        <div class="col-6">
-            <%= f.radio_button :question4, "1", id: "custom_id7" %>
-            <label for="custom_id7">論理性だ</label>
-            <%= f.radio_button :question4, "2", id: "custom_id8" %>
-            <label for="custom_id8">情緒だ</label>
-        </div>
-    </div>
-    <div class="sindanbotan">
-        <%= f.submit " 結果 " %>
-    </div>
+<div class="perfume-container">
+
+<div class="col-12">
+<p>Q1. 宿泊場所の予算は？</p>
+</div>
+
+<div class="col-6">
+<%= f.radio_button :question1, "1" %>
+<label for="stay1">〜5,000円</label>
+
+<%= f.radio_button :stay_budget, "2", id:"stay2" %>
+<label for="stay2">5,000〜10,000円</label>
+
+<%= f.radio_button :stay_budget, "3", id:"stay3" %>
+<label for="stay2">10,000〜20,000円</label>
+
+<%= f.radio_button :stay_budget, "4", id:"stay4" %>
+<label for="stay2">20,000円以上</label>
+</div>
+
+
+<div class="col-12">
+<p>Q2. 飲食店の予算は？【1日3食】</p>
+</div>
+
+<div class="col-6">
+<%= f.radio_button :food_budget, "1", id:"food1" %>
+<label for="food1">〜1,000円</label>
+
+<%= f.radio_button :food_budget, "2", id:"food2" %>
+<label for="food2">1,000〜2,000円</label>
+
+<%= f.radio_button :food_budget, "3", id:"food3" %>
+<label for="food2">2,000〜3,000円</label>
+
+<%= f.radio_button :food_budget, "4", id:"food4" %>
+<label for="food2">3,000〜4,000円</label>
+
+<%= f.radio_button :food_budget, "5", id:"food5" %>
+<label for="food2">4,000〜5,000円</label>
+
+<%= f.radio_button :food_budget, "6", id:"food6" %>
+<label for="food2">5,000円以上</label>
+</div>
+
+
+<div class="col-12">
+<p>Q3. 観光地の予算は？</p>
+</div>
+
+<div class="col-6">
+<%= f.radio_button :spot_budget, "1", id:"spot1" %>
+<label for="spot1">〜1,000円</label>
+
+<%= f.radio_button :spot_budget, "2", id:"spot2" %>
+<label for="spot2">1,000〜2,000円</label>
+
+<%= f.radio_button :spot_budget, "3", id:"spot3" %>
+<label for="spot2">2,000〜3,000円</label>
+
+<%= f.radio_button :spot_budget, "4", id:"spot4" %>
+<label for="spot2">3,000〜4,000円</label>
+
+<%= f.radio_button :spot_budget, "5", id:"spot5" %>
+<label for="spot2">4,000円以上</label>
+</div>
+
+
+<div class="col-12">
+<p>Q4. 行きたい地域は？</p>
+</div>
+
+<div class="col-6">
+<%= f.radio_button :region, "1", id:"region1" %>
+<label for="region1">北海道・東北</label>
+
+<%= f.radio_button :region, "2", id:"region2" %>
+<label for="region2">関東</label>
+
+<%= f.radio_button :region, "3", id:"region3" %>
+<label for="region3">中部</label>
+
+<%= f.radio_button :region, "4", id:"region4" %>
+<label for="region4">関西</label>
+
+<%= f.radio_button :region, "5", id:"region5" %>
+<label for="region5">中国・四国</label>
+
+<%= f.radio_button :region, "6", id:"region6" %>
+<label for="region6">九州・沖縄</label>
+</div>
+
+</div>
+
+<div class="sindanbotan">
+<%= f.submit "結果を見る" %>
+</div>
+
 <% end %>

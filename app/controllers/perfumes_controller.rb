@@ -22,6 +22,6 @@ class PerfumesController < ApplicationController
   
   private
     def perfume_params
-        params.require(:perfume).permit(:question1, :question2, :question3, :question4)
+         params.require(:perfume).permit(:stay_budget, :food_budget, :spot_budget, :region)
     end
 end
