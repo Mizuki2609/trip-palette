@@ -1,40 +1,41 @@
-  <h2>新規投稿ページ</h2>
-<%= form_for @tweet, html: { multipart: true } do |f| %>
 <div class="form-container">
-  <div class="form-card">
-  <div class="field">
-    <%= f.label :recommended_spot %>
-    <%= f.text_field :name, :size => 30 %>
-  </div>
+  <%= form_for @tweet, html: { multipart: true } do |f| %>
+    <div class="form-card">
+      <h2 style="text-align: center; margin-bottom: 20px;">新規投稿ページ</h2>
 
+      <div class="field">
+        <%= f.label :おすすめスポット📍 %>
+        <%= f.text_field :name, :size => 30 %>
+      </div>
 
-  <div class="field">
-    <%= f.label :adress  %>
-  <%= f.text_field :adress, size: 30 %> 
-  </div>
+      <div class="field">
+        <%= f.label :都道府県🗺️  %>
+        <%= f.text_field :adress, size: 30 %> 
+      </div>
 
-  <div class="field">
-    <%= f.label :time  %>
-    <%= f.text_field :time, :size => 30 %>
-  </div>
+      <div class="field">
+        <%= f.label :時間⏱  %>
+        <%= f.text_field :time, :size => 30 %>
+      </div>
 
-  <div class="field">
-    <%= f.label :cost  %>
-    <%= f.number_field :cost %>
-  </div>
+      <div class="field">
+        <%= f.label :費用💰  %>
+        <%= f.number_field :cost %>
+      </div>
 
-  <div class="field">
-    <%= f.label :point  %>
-    <%= f.text_area :point, :size => "30x2" %>
-  </div>
+      <div class="field">
+        <%= f.label :おすすめポイント🌟  %>
+        <%= f.text_area :point, :size => "30x2" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-  <%= f.submit "投稿する" %>
+      <div class="field">
+        <%= f.label :画像📸 %>
+        <%= f.file_field :image %>
+      </div>
+
+      <%= f.submit "投稿する" %>
     </div>
+  <% end %>
 </div>
-<% end %>
 
-<%= link_to "一覧に戻る", tweets_path %>
+<a href="/tweets" class="back-link">一覧に戻る</a>
