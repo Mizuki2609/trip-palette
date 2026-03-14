@@ -12,7 +12,7 @@ class PerfumesController < ApplicationController
 
     def create
         @perfume = Perfume.new(perfume_params)
-        if perfume.save
+        if @perfume.save
             flash[:notice] = "診断が完了しました"
             redirect_to @perfume
            # redirect_to perfume_path(perfume.id)
