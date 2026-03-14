@@ -1,96 +1,62 @@
-#<div class="tweets-container">
-  #<% if user_signed_in? %>
-    #<%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-btn" %>
-   #<div class="search-area">
+<div class="tweets-container">
+  <% if user_signed_in? %>
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-btn" %>
+   <div class="search-area">
 
- #<h3>投稿を検索</h3>
-　#<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-　#<%= text_field_tag :search, "", class:"search-box" %>
-　#<%= submit_tag '検索する', class:"search-btn" %>
-　#<% end %>
-　#<%= link_to "新規投稿へ", new_tweet_path, class:"new-post" %>
-#</div>
-  #<% else %>
-    #<div class="auth">
-       #<%= link_to "新規登録", new_user_registration_path %>
-       #<%= link_to "ログイン", new_user_session_path %>
-    #</div>
-  #<% end %>
-
-  #<%= link_to "診断を始める", new_perfume_path, class: "link" %>
-
-  #<h3>一覧ページ</h3>
-  
-  #<% @tweets.each do |t| %>
-    #<div class="tweet">
-      #<% if t.image.attached? %>
-        #<div class="tweet-image">
-          #<%= image_tag t.image, size: '250x200' %>
-        #</div>
-      #<% end %>
-
-      #<div class="tweet-content">
-        #<p><%= t.name %></p>
-        #<p><%= t.adress %></p>
-        #<p><%= t.time %></p>
-        #<p><%= t.cost %></p>
-        #<p><%= t.point %></p>
-        
-        #<div class="tweet-actions">
-          #<%= link_to "詳細へ", tweet_path(t.id) %>
-          #<%= button_to "削除する", tweet_path(t.id), method: :delete %>
-        #</div>
-
-        #<div class="like-section">
-          #<% if user_signed_in? %>
-           # <% if current_user.already_liked?(t) %>
-            #  <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
-             #   <span>いいねを取り消す</span> <%= t.likes.count %>
-              #<% end %>
-            #<% else %>
-             # <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :post do %>
-              #  <span>いいね</span> <%= t.likes.count %>
-              #<% end %>
-            #<% end %>
-          #<% else %>
-           # <p>いいねの数 = <%= t.likes.count %></p>
-          #<% end %>
-        #</div>
-      #</div>
-    #</div> <% end %>
-#</div>
-  
-<div class="main-wrapper"> <div class="main-content">
-    <div class="search-area">
-      <h3>投稿を検索</h3>
-      <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-        <%= text_field_tag :search, "", class:"search-box" %>
-        <%= submit_tag '検索する', class:"search-btn" %>
-      <% end %>
-    </div>
-
-    <h3>一覧ページ</h3>
-    <% @tweets.each do |t| %>
-     <div class="tweet">
-     </div>
-    <% end %>
-  </div>
-
-  <aside class="sidebar">
-    <div class="user-menu">
-      <h3 class="side-title">USER MENU</h3>
-      <ul class="side-list">
-        <li><%= link_to "診断を始める", new_perfume_path %></li>
-
-        <% if user_signed_in? %>
-          <li><%= link_to "新規投稿へ", new_tweet_path %></li>
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "新規登録", new_user_registration_path %></li>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </div>
-  </aside>
-
+ <h3>投稿を検索</h3>
+　<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+　<%= text_field_tag :search, "", class:"search-box" %>
+　<%= submit_tag '検索する', class:"search-btn" %>
+　<% end %>
+　<%= link_to "新規投稿へ", new_tweet_path, class:"new-post" %>
 </div>
+  <% else %>
+    <div class="auth">
+       <%= link_to "新規登録", new_user_registration_path %>
+       <%= link_to "ログイン", new_user_session_path %>
+    </div>
+  <% end %>
+
+  <%= link_to "診断を始める", new_perfume_path, class: "link" %>
+
+  <h3>一覧ページ</h3>
+  
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+      <% if t.image.attached? %>
+        <div class="tweet-image">
+          <%= image_tag t.image, size: '250x200' %>
+        </div>
+      <% end %>
+
+      <div class="tweet-content">
+        <p><%= t.name %></p>
+        <p><%= t.adress %></p>
+        <p><%= t.time %></p>
+        <p><%= t.cost %></p>
+        <p><%= t.point %></p>
+        
+        <div class="tweet-actions">
+          <%= link_to "詳細へ", tweet_path(t.id) %>
+          <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+        </div>
+
+        <div class="like-section">
+          <% if user_signed_in? %>
+            <% if current_user.already_liked?(t) %>
+              <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
+                <span>いいねを取り消す</span> <%= t.likes.count %>
+              <% end %>
+            <% else %>
+              <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :post do %>
+                <span>いいね</span> <%= t.likes.count %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <p>いいねの数 = <%= t.likes.count %></p>
+          <% end %>
+        </div>
+      </div>
+    </div> <% end %>
+</div>
+  
