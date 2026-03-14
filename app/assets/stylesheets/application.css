@@ -204,3 +204,12 @@ body {
 .logout-btn {
   float: right;
 }
+.header-menu{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.header-menu a{
+  margin-left: 20px;
+}
