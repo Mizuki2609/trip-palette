@@ -14,10 +14,11 @@ class PerfumesController < ApplicationController
         @perfume = Perfume.new(perfume_params)
         if @perfume.save
             flash[:notice] = "診断が完了しました"
-            redirect_to @perfume
-           # redirect_to perfume_path(perfume.id)
+            #redirect_to @perfume
+            redirect_to perfume_path(perfume.id)
         else
-            redirect_to :action => "new"
+            #redirect_to :action => "new"
+            render :new
         end
     end
   
