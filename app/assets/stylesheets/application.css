@@ -465,70 +465,80 @@ body {
   transform: translateY(-1px);
 }
 .login-wrapper {
-  background-color: #fdf6f7; /* 薄いピンクベージュ */
+  background-color: #fdf6f7; 
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
+  width: 100%;
 }
+
 .login-card {
   background: white;
   padding: 40px;
   border-radius: 20px; 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+  border: 4px solid #000; 
   text-align: center;
-  width: 300px;
-  max-width: 400px;
+  width: 380px;
+  box-sizing: border-box;
 }
+
 .login-card h2 {
-  color: #ff9a9e;
-  font-size: 1.5rem;
-  margin-bottom: 25px;
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
-.field input[type="email"],
-.field input[type="password"],
-.field input[type="text"] {
-  width: 250px;      
-  padding: 8px;
-  margin: 10px auto;  
-  display: block;     
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-.actions input[type="submit"] {
-  background: #ff9a9e;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-top: 20px;
-}
+
 .field {
-  text-align: center; 
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .field p {
-  margin: 5px 0;
+  margin-bottom: 5px;
 }
-.login-card .actions,
-.login-card a {
-  display: block;
-  margin: 10px auto;
-  text-align: center;
+
+.input-field {
+  width: 100% !important;
+  max-width: 280px;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 3px solid #000;
+  border-radius: 15px;
+  display: inline-block;
 }
-.actions, .shared-links {
+
+.field-remember {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.login-button {
+  background: #ee87c8;
+  color: white;
+  border: none;
+  padding: 12px 60px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.shared-links {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  width: 100%;
 }
-.login-card a {
-  display: inline-block;
-  margin: 5px 0;
-  text-align: center;
+
+.shared-links a {
+  display: block;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+  font-family: inherit;
 }
+
 

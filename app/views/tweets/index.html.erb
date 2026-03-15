@@ -4,11 +4,11 @@
    <div class="search-area">
 
  <h3>投稿を検索</h3>
-　<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-　<%= text_field_tag :search, "", class:"search-box" %>
-　<%= submit_tag '検索する', class:"search-btn" %>
-　<% end %>
-　<%= link_to "新規投稿へ", new_tweet_path, class:"new-post" %>
+  <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+  <%= text_field_tag :search, "", class:"search-box" %>
+  <%= submit_tag '検索する', class:"search-btn" %>
+  <% end %>
+  <%= link_to "新規投稿へ", new_tweet_path, class:"new-post" %>
 </div>
   <% else %>
     <div class="auth-buttons"> <%= link_to "新規登録", new_user_registration_path, class: "btn btn-signup" %>
