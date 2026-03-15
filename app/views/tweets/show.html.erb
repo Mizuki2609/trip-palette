@@ -1,54 +1,51 @@
-<div class="tweet-detail">
-  <h3>投稿詳細</h3>
-  
-  <div class="tweet-content">
-    <%# 修正ポイント1: プロパティを直接呼び出す形式に変更 %>
-    <p><strong>名前:</strong> <%= @tweet.name %></p>
-    <p><strong>住所:</strong> <%= @tweet.adress %></p>
-    <p><strong>時間:</strong> <%= @tweet.time %></p>
-    <p><strong>費用:</strong> <%= @tweet.cost %>円</p>
-    <p><strong>ポイント:</strong> <%= @tweet.point %></p>
+<div class="show-container">
+  <div class="show-card">
+    <h3>投稿詳細</h3>
     
-    <%# 画像URLが入っている場合のみ表示 %>
-    <% if @tweet.image.present? %>
-      <p><strong>画像:</strong><br>
-        <%= image_tag @tweet.image, width: "300px" %>
-      </p>
-    <% end %>
+    <div class="show-content">
+      <p><strong>おすすめの場所📍:</strong> <%= @tweet.name %></p>
+      <p><strong>住所🗺️:</strong> <%= @tweet.adress %></p>
+      <p><strong>時間⏱:</strong> <%= @tweet.time %></p>
+      <p><strong>費用💰:</strong> <%= @tweet.cost %>円</p>
+      <p><strong>ポイント🌟:</strong> <%= @tweet.point %></p>
+      
+      <% if @tweet.image.present? %>
+        <p><strong>画像:</strong><br>
+          <%= image_tag @tweet.image, width: "300px" %>
+        </p>
+      <% end %>
 
-    <p><strong>投稿日:</strong> <%= @tweet.created_at.strftime("%Y/%m/%d %H:%M") %></p>
-  </div>
+      <p><strong>投稿日:</strong> <%= @tweet.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+    </div>
 
-  <hr>
-
-  <div class="like-section">
-    <% if user_signed_in? %>
-      <% if current_user.already_liked?(@tweet) %>
-        <%# 修正ポイント2: Rails 7以降に対応したturbo_methodを指定 %>
-        <%= link_to tweet_like_path(@tweet), data: { turbo_method: :delete } do %>
-          <button type="button">❤️ いいねを取り消す (<%= @tweet.likes.count %>)</button>
+    <div class="like-section">
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(@tweet) %>
+          <%= link_to tweet_like_path(@tweet), data: { turbo_method: :delete } do %>
+            <button type="button">❤️ いいねを取り消す (<%= @tweet.likes.count %>)</button>
+          <% end %>
+        <% else %>
+          <%= link_to tweet_likes_path(@tweet), data: { turbo_method: :post } do %>
+            <button type="button">🤍 いいね (<%= @tweet.likes.count %>)</button>
+          <% end %>
         <% end %>
       <% else %>
-        <%= link_to tweet_likes_path(@tweet), data: { turbo_method: :post } do %>
-          <button type="button">🤍 いいね (<%= @tweet.likes.count %>)</button>
-        <% end %>
+        <p>いいねの数: <%= @tweet.likes.count %></p>
       <% end %>
-    <% else %>
-      <p>いいねの数: <%= @tweet.likes.count %></p>
-    <% end %>
+    </div>
+
+    <div class="actions">
+      <%= link_to "編集する", edit_tweet_path(@tweet), class: "btn" %>
+      <%= link_to "投稿一覧に戻る", tweets_path, class: "btn" %>
+    </div>
   </div>
 
-  <div class="actions" style="margin-top: 20px;">
-    <%= link_to "編集する", edit_tweet_path(@tweet), class: "btn" %> |
-    <%= link_to "投稿一覧に戻る", tweets_path %>
+  <div class="like-users-section">
+    <h2>いいねしたユーザー</h2>
+    <ul>
+      <% @tweet.liked_users.each do |user| %>
+        <li><%= user.email %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
-
-<hr>
-
-<h2>いいねしたユーザー</h2>
-<ul>
-  <% @tweet.liked_users.each do |user| %>
-    <li><%= user.email %></li>
-  <% end %>
-</ul>

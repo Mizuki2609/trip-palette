@@ -1,15 +1,14 @@
 <div class="form-container">
-  <h2 class="form-title">新規投稿ページ</h2>
+  <h2 class="form-title">投稿編集ページ ✈️</h2>
 
-    <%= form_for @tweet, html: { multipart: true } do |f| %>
-
+  <%= form_for @tweet, html: { multipart: true } do |f| %>
     <div class="field">
       <%= f.label :name, "おすすめスポット📍" %>
       <%= f.text_field :name, class: "form-input" %>
     </div>
 
     <div class="field">
-      <%= f.label :adress, "住所🗺️" %>
+      <%= f.label :adress, "都道府県🗺️" %>
       <%= f.text_field :adress, class: "form-input" %>
     </div>
 
@@ -29,14 +28,13 @@
     </div>
 
     <div class="field">
-      <%= f.label :image, "画像📸",class: "image-label" %>
+      <%= f.label :image, "画像📸", class: "image-label" %>
       <%= f.file_field :image, class: "image-input" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "投稿する", class: "submit-btn" %>
+      <%= f.submit "更新する", class: "submit-btn" %>
       <%= link_to "一覧に戻る", tweets_path, class: "back-link-btn" %>
     </div>
-
   <% end %>
 </div>

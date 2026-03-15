@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   
   root 'tweets#index'
   resources :tweets do
+    patch 'tweets/:id' => 'tweets#update'
+    get 'tweets/:id/edit' => 'tweets#edit', as:'edit_tweet'
     resources :likes, only: [:create, :destroy]
   end
   delete 'tweets/:id' => 'tweets#destroy'
