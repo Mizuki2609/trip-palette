@@ -250,7 +250,7 @@ body {
 
 .plane{
   position:absolute;
-  width:90px;
+  width:55px;
   top:-85px;
   right: -120px;
   animation: fly 10s linear infinite;
@@ -347,22 +347,22 @@ body {
 }
 
 .cloud img{
-  width:180px;
+  width:250px;
 }
 
 .cloud-left{
-  left:50px;
+  left:200px;
   top:350px;
 }
 
 .cloud-right{
-  right:50px;
+  right:150px;
   top:450px;
 }
 
 .cloud-bottom{
   right:200px;
-  bottom:50px;
+  bottom:150px;
 }
 
 .cloud-left2{
@@ -423,3 +423,112 @@ body {
   bottom:40px;
   animation-delay:4s;
 }
+.auth-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-login {
+  color: #333;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-login:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+.btn-signup {
+  color: #fff;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-signup:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+.login-wrapper {
+  background-color: #fdf6f7; /* 薄いピンクベージュ */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+  text-align: center;
+  width: 300px;
+  max-width: 400px;
+}
+.login-card h2 {
+  color: #ff9a9e;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="text"] {
+  width: 250px;      
+  padding: 8px;
+  margin: 10px auto;  
+  display: block;     
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.actions input[type="submit"] {
+  background: #ff9a9e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.field {
+  text-align: center; 
+  margin-bottom: 25px;
+}
+
+.field p {
+  margin: 5px 0;
+}
+.login-card .actions,
+.login-card a {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+.actions, .shared-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.login-card a {
+  display: inline-block;
+  margin: 5px 0;
+  text-align: center;
+}
+

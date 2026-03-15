@@ -5,11 +5,11 @@
     <h2>Resend confirmation instructions</h2>
 
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-
+4
       <%= render "users/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <p><%= f.label :メール %></p>
+        <p><%= f.label :email"メール" %></p>
         <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
       </div>
 

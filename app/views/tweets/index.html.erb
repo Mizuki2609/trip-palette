@@ -11,9 +11,8 @@
 　<%= link_to "新規投稿へ", new_tweet_path, class:"new-post" %>
 </div>
   <% else %>
-    <div class="auth">
-       <%= link_to "新規登録", new_user_registration_path %>
-       <%= link_to "ログイン", new_user_session_path %>
+    <div class="auth-buttons"> <%= link_to "新規登録", new_user_registration_path, class: "btn btn-signup" %>
+       <%= link_to "ログイン", new_user_session_path, class: "btn btn-login" %>
     </div>
   <% end %>
   <div class="sky">
