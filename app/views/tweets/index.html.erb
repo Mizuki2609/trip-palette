@@ -20,15 +20,15 @@
   </div>
 </div>
   <% else %>
+  <div class="button-container">
     <div class="auth-buttons">
        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-signup" %>
        <%= link_to "ログイン", new_user_session_path, class: "btn btn-login" %>
     </div>
   <% end %>
+ </div>
 </div>
   <div class="sky">
-
-  <div class="start-a
 
   <div class="start-area">
     <%= image_tag "hikouki3.png", class: "plane plane1" %>
@@ -72,11 +72,11 @@
       <% end %>
 
       <div class="tweet-content">
-        <p><%= t.name %></p>
-        <p><%= t.adress %></p>
-        <p><%= t.time %></p>
-        <p><%= t.cost %></p>
-        <p><%= t.point %></p>
+        <p>おすすめの場所：<%= t.name %></p>
+        <p>住所：<%= t.adress %></p>
+        <p>時間：<%= t.time %></p>
+        <p>費用：<%= t.cost %></p>
+        <p>おすすめポイント：<%= t.point %></p>
         
         <div class="tweet-actions">
           <%= link_to "詳細へ", tweet_path(t.id) %>

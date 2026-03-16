@@ -1426,3 +1426,202 @@ form {
   text-align:center;
   margin-top:15px;
 }
+.spot-item {
+  display: flex;
+  justify-content: center;
+}
+.tweets-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tweet {
+  width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.tweet-image {
+  text-align: center;
+}
+
+.tweet-content {
+  text-align: center;
+}
+.auth-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.button-container {
+  position: absolute;
+  top: -10px;
+  right: -135px;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px;
+  z-index: 10;
+}
+
+.button-container button, 
+.button-container a {
+  white-space: nowrap !important;
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 100px;
+  writing-mode: horizontal-tb !important;
+}
+.perfume-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 4px solid #87CEEB;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.perfume-container p {
+  font-weight: bold;
+  color: #5ab4bd;
+  margin-top: 20px;
+  border-bottom: 2px dashed #87CEEB;
+  display: inline-block;
+}
+
+.perfume-container label {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.sindanbotan {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sindanbotan input {
+  padding: 10px 40px;
+  background-color: #5ab4bd;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.login-card {
+  width: 400px;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 4px solid #87CEEB;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login-card h2 {
+  color: #5ab4bd;
+  margin-bottom: 30px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.login-button {
+  background-color: #f06292;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.shared-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shared-links a {
+  color: #5ab4bd;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.remember-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.login-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 100vh !important;
+  background-color: #fdf6f7 !important;
+}
+
+.login-card {
+  width: 400px !important;
+  padding: 40px !important;
+  background: white !important;
+  border: 4px solid #87CEEB !important;
+  border-radius: 25px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+  text-align: center !important;
+}
+
+.login-card h2 {
+  color: #5ab4bd !important;
+  margin-bottom: 25px !important;
+}
+
+.input-field {
+  width: 90% !important;
+  padding: 10px !important;
+  margin: 10px auto !important;
+  border: 1px solid #ddd !important;
+  border-radius: 10px !important;
+}
+
+.login-button {
+  background: #ff9a9e !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 40px !important;
+  border-radius: 25px !important;
+  cursor: pointer !important;
+  margin-top: 10px !important;
+}
+
+.shared-links {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  margin-top: 20px !important;
+  gap: 8px !important;
+}
+
+.shared-links a {
+  color: #5ab4bd !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+}
