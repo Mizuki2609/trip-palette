@@ -1625,3 +1625,97 @@ form {
   text-decoration: none !important;
   font-size: 14px !important;
 }
+body {
+  background: linear-gradient(to bottom, #d6f0ff, #f0faff);
+  font-family: "Hiragino Maru Gothic ProN", sans-serif;
+}
+
+/* タイトル部分 */
+.intoro {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.intoro h5 {
+  color: #7ec8e3;
+  font-size: 20px;
+}
+
+.intoro p {
+  color: #555;
+}
+
+/* カード全体 */
+.perfume-container {
+  width: 80%;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.8);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 行き先タイトル */
+.destination-title {
+  text-align: center;
+  color: #6bbde5;
+  font-size: 32px;
+  margin-bottom: 30px;
+  letter-spacing: 5px;
+}
+
+/* 丸の配置 */
+.plan-visual-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-row {
+  display: flex;
+  gap: 40px;
+  margin-top: -40px;
+}
+
+/* 丸デザイン */
+.circle-item {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px dashed #9ad4f5;
+  background: rgba(255,255,255,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+/* 上の丸ちょい大きく */
+.accommodation {
+  width: 250px;
+  height: 250px;
+}
+
+/* ラベル */
+.label {
+  font-size: 14px;
+  color: #7ec8e3;
+  margin-bottom: 8px;
+}
+
+/* 中身 */
+.circle-content {
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ちょい色分け（韓国風っぽさ） */
+.sightseeing {
+  background: rgba(173, 216, 230, 0.3);
+}
+
+.restaurant {
+  background: rgba(200, 230, 255, 0.3);
+}
